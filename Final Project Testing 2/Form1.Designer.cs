@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.tmrRun = new System.Windows.Forms.Timer(this.components);
             this.tmrBullet1Move = new System.Windows.Forms.Timer(this.components);
             this.btnStart = new System.Windows.Forms.Button();
             this.tmrSwitchDirection = new System.Windows.Forms.Timer(this.components);
-            this.tmrPhase2 = new System.Windows.Forms.Timer(this.components);
+            this.tmrPhaseUp = new System.Windows.Forms.Timer(this.components);
             this.picLaserTopUnder = new System.Windows.Forms.PictureBox();
             this.picLaserBottomOver = new System.Windows.Forms.PictureBox();
             this.picLaserTopOver = new System.Windows.Forms.PictureBox();
@@ -49,6 +49,8 @@
             this.picRightWall = new System.Windows.Forms.PictureBox();
             this.picTopWall = new System.Windows.Forms.PictureBox();
             this.picBottomWall = new System.Windows.Forms.PictureBox();
+            this.tmrSwitchCommet = new System.Windows.Forms.Timer(this.components);
+            this.tmrCommet = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picLaserTopUnder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLaserBottomOver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLaserTopOver)).BeginInit();
@@ -60,34 +62,38 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBottomWall)).BeginInit();
             this.SuspendLayout();
             // 
-            // timer1
+            // tmrRun
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 10;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.tmrRun.Interval = 10;
+            this.tmrRun.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // tmrBullet1Move
             // 
-            this.tmrBullet1Move.Enabled = true;
             this.tmrBullet1Move.Interval = 60;
             this.tmrBullet1Move.Tick += new System.EventHandler(this.tmrMove_Tick);
             // 
             // btnStart
             // 
+            this.btnStart.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnStart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnStart.ForeColor = System.Drawing.Color.Teal;
             this.btnStart.Location = new System.Drawing.Point(319, 174);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(75, 23);
             this.btnStart.TabIndex = 0;
             this.btnStart.Text = "Start";
-            this.btnStart.UseVisualStyleBackColor = true;
-            this.btnStart.Visible = false;
+            this.btnStart.UseVisualStyleBackColor = false;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // tmrSwitchDirection
             // 
-            this.tmrSwitchDirection.Enabled = true;
             this.tmrSwitchDirection.Interval = 3400;
             this.tmrSwitchDirection.Tick += new System.EventHandler(this.tmrSwitchDirection_Tick);
+            // 
+            // tmrPhaseUp
+            // 
+            this.tmrPhaseUp.Interval = 10000;
+            this.tmrPhaseUp.Tick += new System.EventHandler(this.tmrPhaseUp_Tick);
             // 
             // picLaserTopUnder
             // 
@@ -144,7 +150,6 @@
             // 
             // tmrLasers
             // 
-            this.tmrLasers.Enabled = true;
             this.tmrLasers.Interval = 6000;
             this.tmrLasers.Tick += new System.EventHandler(this.tmrLasers_Tick);
             // 
@@ -160,7 +165,6 @@
             // 
             // tmrGameTime
             // 
-            this.tmrGameTime.Enabled = true;
             this.tmrGameTime.Interval = 1000;
             this.tmrGameTime.Tick += new System.EventHandler(this.tmrGameTime_Tick);
             // 
@@ -176,7 +180,6 @@
             // 
             // tmrSwitchXDirection
             // 
-            this.tmrSwitchXDirection.Enabled = true;
             this.tmrSwitchXDirection.Interval = 5400;
             this.tmrSwitchXDirection.Tick += new System.EventHandler(this.tmrSwitchXDirection_Tick);
             // 
@@ -211,6 +214,16 @@
             this.picBottomWall.Size = new System.Drawing.Size(739, 10);
             this.picBottomWall.TabIndex = 12;
             this.picBottomWall.TabStop = false;
+            // 
+            // tmrSwitchCommet
+            // 
+            this.tmrSwitchCommet.Interval = 3000;
+            this.tmrSwitchCommet.Tick += new System.EventHandler(this.tmrSwitchCommet_Tick);
+            // 
+            // tmrCommet
+            // 
+            this.tmrCommet.Interval = 1000;
+            this.tmrCommet.Tick += new System.EventHandler(this.tmrCommet_Tick);
             // 
             // Form1
             // 
@@ -252,10 +265,10 @@
         #endregion
         private System.Windows.Forms.Timer tmrBullet1Move;
         private System.Windows.Forms.PictureBox picSprite;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer tmrRun;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Timer tmrSwitchDirection;
-        private System.Windows.Forms.Timer tmrPhase2;
+        private System.Windows.Forms.Timer tmrPhaseUp;
         private System.Windows.Forms.PictureBox picLaserTopOver;
         private System.Windows.Forms.PictureBox picLaserBottomOver;
         private System.Windows.Forms.PictureBox picLaserTopUnder;
@@ -270,6 +283,8 @@
         private System.Windows.Forms.PictureBox picRightWall;
         private System.Windows.Forms.PictureBox picTopWall;
         private System.Windows.Forms.PictureBox picBottomWall;
+        private System.Windows.Forms.Timer tmrSwitchCommet;
+        private System.Windows.Forms.Timer tmrCommet;
     }
 }
 
