@@ -1,4 +1,9 @@
-﻿using System;
+﻿//NAME Iesu Alora
+//DATE 23/06/2022
+//TEACHER Mr. Wachs
+//Assignment Final Project
+//PURPOSE to demonstrate all concepts taught in copmuter science.
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +18,7 @@ namespace Final_Project_Testing_2
    
     public partial class Form1 : Form
     {
-        int x;
+        int x;              // integers for location of projectiles
         int x2 = 0;
         int x3;
         int x4;
@@ -21,12 +26,12 @@ namespace Final_Project_Testing_2
         int y2;
         int y3;
         int y4;
-        bool up;
+        bool up;            // booleans to determine direction of porjectiles
         bool right;
         bool dRight;
-        bool nextPhase;
+        bool nextPhase;     // boolean to change difficulty of game
         const int STOPPED = 0;          // For when the game first starts
-        const int MOVE_UP = 1;
+        const int MOVE_UP = 1;          // integers for movement
         const int MOVE_DOWN = 2;
         const int MOVE_LEFT = 3;
         const int MOVE_RIGHT = 4;
@@ -43,7 +48,7 @@ namespace Final_Project_Testing_2
         // and the cartesian plane (x,y) coordinates
         // Now some variables for sprite (for the coordinates)
         // Variables for each "edge" of the rectangle (or "hitbox" or "bounding" box)
-        int spriteTop;
+        int spriteTop; // Coordinates
         int spriteBottom;
         int spriteLeft;
         int spriteRight;
